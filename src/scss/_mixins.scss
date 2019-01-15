@@ -28,3 +28,11 @@
   line-height: $line;
   text-align: left;
 }
+
+@mixin text($size, $color, $weight){
+  font-size: $size;
+  color: $color;
+  line-height: $size + 6;
+  font-family: $font-roboto;
+  font-weight: $weight;
+}

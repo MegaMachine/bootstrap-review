@@ -12,7 +12,7 @@
   }
   .navbar-toggle{
     margin: 0;
-    float: left;
+    border:none;
     &:focus, &:hover {
       background-color: transparent;
     }

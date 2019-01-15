@@ -5,7 +5,9 @@ html{
   font-family: 'Roboto',sans-serif; //Set default font-family
 }
 
-
+.text-default{
+  @include text(18px,$color-blue-black, 400);
+}
 
 
 .button{
