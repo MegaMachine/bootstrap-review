@@ -1,3 +1,13 @@
+html{
+  font-size: 16px; //Set default font-size
+}
+*{
+  font-family: 'Roboto',sans-serif; //Set default font-family
+}
+
+
+
+
 .button{
   &__more{
     font-family: Montserrat;
