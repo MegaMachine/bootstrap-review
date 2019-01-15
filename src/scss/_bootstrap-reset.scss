@@ -1,0 +1,20 @@
+// For Bootstrap 3
+.navbar{
+  border-radius: 0px;
+  background: transparent;
+  border:none;
+  box-shadow: none;
+  .navbar-header{
+
+  }
+  .navbar-collapse{
+    border:none;
+  }
+  .navbar-toggle{
+    margin: 0;
+    float: left;
+    &:focus, &:hover {
+      background-color: transparent;
+    }
+  } 
+}

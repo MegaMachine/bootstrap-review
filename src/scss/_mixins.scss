@@ -1,0 +1,30 @@
+@mixin fonter ($font, $size, $color){
+  font-family: $font;
+  font-size: $size;
+  color:$color;
+}
+
+@mixin page-title($color, $size, $line){
+  font-weight: 700;
+  font-family: $font-roboto;
+  text-align: left;
+  text-transform: uppercase;
+  color:$color;
+  font-size: $size;
+  line-height: $line;
+  span{
+    border-radius: 50%;
+    color:$color-pink-1;
+    height:$size/2;
+    width: $size/2;
+  }
+}
+
+@mixin page-text($color, $size, $line){
+  font-family: $font-open-sans;
+  font-weight: 400;
+  color:$color;
+  font-size: $size;
+  line-height: $line;
+  text-align: left;
+}

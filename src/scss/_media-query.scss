@@ -1,0 +1,16 @@
+$size-xs: 480px;
+$size-sm: 768px;
+$size-md: 991px;
+$sile-lg: 1200px;
+
+@mixin mqmax($arg){
+  @media screen and (max-width: $arg){
+    @content;
+  }
+}
+
+@mixin mqmin($arg){
+  @media screen and (min-width: $arg){
+    @content;
+  }
+}

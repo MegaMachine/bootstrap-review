@@ -1,0 +1,34 @@
+html{
+  font-size: 16px; //Set default font-size
+}
+*{
+  font-family: 'Roboto',sans-serif; //Set default font-family
+}
+
+
+
+
+.button{
+  &__more{
+    font-family: Montserrat;
+    color:  $color-pink-2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    &::after{
+      content:"";
+      width: 30px;
+      height: 10px;
+      display: block;
+      background: url('../img/icon/Arrow.svg') no-repeat center / cover;
+      margin-left: 10px;
+    }
+  }
+  &__read{
+    display: block;
+    
+  }
+}
