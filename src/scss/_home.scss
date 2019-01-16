@@ -1,0 +1,52 @@
+.home{
+  .carousel-control{
+    background-image: none;
+    opacity: 1 ;
+    .glyphicon{
+      color:$color-pink-2;
+    }
+    &[data-slide="prev"]:hover{
+      background-image: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%); 
+      background-repeat: repeat-x;
+    }
+    &[data-slide="next"]:hover{
+      background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%); 
+      background-repeat: repeat-x;
+    }
+  }
+  .carousel-caption{
+    text-shadow: none;
+    right: initial;
+    left: 10%;
+    top: 10%;
+    .carousel-info{
+      display: inline-block;
+      h2,p{
+        margin: 0;
+        padding: 0px 10px;
+      }
+      h2{
+        @include text(16px, $color-blue-black, 600);
+        text-transform: uppercase;
+        background-color: $color-pink-2;
+        margin-bottom: 5px;
+      }
+      p{
+        @include text(14px, $color-pink-2,600);
+        margin-bottom: 20px;
+        background-color: $color-blue-black;
+      }
+    }
+  }
+  .carousel-indicators{
+    li{
+      margin: 0;
+      background: $color-blue-black;
+      width: 15px;
+      height: 15px;
+      &.active{
+        background: $color-pink-2;
+      }
+    }
+  }
+}

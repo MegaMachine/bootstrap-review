@@ -16,5 +16,13 @@
     &:focus, &:hover {
       background-color: transparent;
     }
-  } 
+  }
+  .navbar-nav{
+    li{
+      line-height: 0px;
+      a{
+        padding: 0;
+      }
+    }
+  }
 }

@@ -9,3 +9,14 @@ $('.logo img').hover(function(){
 }, function(){
   $(this).attr('src',logo);
 });
+
+$('#home-carousel').carousel({
+  interval:3000
+})
+$('.home').hover(function(){
+  $('#home-carousel').carousel('pause')
+},function(){
+  $('#home-carousel').carousel({
+    pause:false
+  });
+})

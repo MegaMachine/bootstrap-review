@@ -111,7 +111,8 @@ function staticMoveImg(){
 
 function staticMoveFonts(){
   const staticPaths = [
-    './src/fonts/**/*.*'
+    './src/fonts/**/*.*',
+    './node_modules/bootstrap/fonts/*.*'
   ];
   return gulp.src(staticPaths)
     .pipe(gulp.dest('./build/fonts'));

@@ -1,9 +1,17 @@
 .header{
   background-color: $color-white;
-  .header-top{
-
-  }
   nav.navbar{
+    margin-bottom: 0px;
+    .row{
+      @include mqmin($size-sm){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &:after,&:before{
+        display: none;
+      }
+    }
     .navbar-header{
       .logo{
         width: 90px;
@@ -16,21 +24,25 @@
     }
     .navbar-collapse{
       background-color: $color-white;
+      @include mqmax($size-sm){
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+      }
       .navbar-nav{
         @include mqmin($size-sm){
-          float: right;
-          transform: translateY(25%);
+          float: none;
         }
         @include mqmax($size-sm){
           padding-left: 15px;
         }
-        li{   
+        li{
+          padding-left: 20px;
           a{
             @extend .text-default;
             text-transform: uppercase;
             display: inline-block;
             overflow: hidden;
-            padding: 0;
             @include mqmax($size-sm){
               padding:15px 0;
             }
@@ -41,16 +53,13 @@
               width:100%;
               height:4px;
               background-color: $color-pink-2;
-              transform: translateX(-100%);
+              transform: translateX(-101%);
               transition: .5s;
               bottom: 0;
               border-radius: 2px;
               transform-origin: center;
-              @include mqmax($size-sm){
-                padding:15px 0;
-              }
             }
-            &:hover{
+            &:hover,&.active{
               &:after{
                 transform: translateX(0%);
                 
