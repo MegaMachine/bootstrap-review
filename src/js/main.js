@@ -5,13 +5,13 @@ $('.hamburger--emphatic').click(function(){
 var logo;
 $('.logo img').hover(function(){
   logo =  $(this).attr('src');
-  $(this).attr('src','img/nike-red.svg');
+  $(this).attr('src','img/nike-green.svg');
 }, function(){
   $(this).attr('src',logo);
 });
 
 $('#home-carousel').carousel({
-  interval:3000
+  interval:5000
 })
 $('.home').hover(function(){
   $('#home-carousel').carousel('pause')

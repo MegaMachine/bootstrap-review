@@ -26,7 +26,7 @@
       background-color: $color-white;
       @include mqmax($size-sm){
         position: absolute;
-        z-index: 1;
+        z-index: 16;
         width: 100%;
       }
       .navbar-nav{
@@ -42,29 +42,10 @@
             @extend .text-default;
             text-transform: uppercase;
             display: inline-block;
-            overflow: hidden;
             @include mqmax($size-sm){
               padding:15px 0;
             }
-            &:after{
-              content:"";
-              position: absolute;
-              display: block;
-              width:100%;
-              height:4px;
-              background-color: $color-pink-2;
-              transform: translateX(-101%);
-              transition: .5s;
-              bottom: 0;
-              border-radius: 2px;
-              transform-origin: center;
-            }
-            &:hover,&.active{
-              &:after{
-                transform: translateX(0%);
-                
-              }
-            }
+            @extend .element-hover-active;
           }
         }
       }
