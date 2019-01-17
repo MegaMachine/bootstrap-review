@@ -7,6 +7,7 @@
         @include text(14px,$color-blue-black,400);
         text-transform: uppercase;
         border-width: 2px;
+        display: inline-block;
         &:hover{
           background-color: $color-green;
           border-color: transparent;

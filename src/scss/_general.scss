@@ -16,6 +16,9 @@ html{
   }
   p{
     @include text(16px,$color-blue-black,400);
+    &:first-letter{
+      text-transform: uppercase;
+    }
   }
 }
 .element-hover-active{

@@ -18,7 +18,8 @@ function stylesLibs() {
     './node_modules/bootstrap/dist/css/bootstrap-theme.css',
     './node_modules/normalize.css/normalize.css',
     // './node_modules/simplebar/dist/simplebar.css',
-    './node_modules/hamburgers/dist/hamburgers.css'
+    './node_modules/hamburgers/dist/hamburgers.css',
+    './src/scss/animate.css'
   ]
   return gulp.src(cssPaths)
     .pipe(concat('libs.css'))
