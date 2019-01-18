@@ -1,51 +1,69 @@
-.header{
+.header {
   background-color: $color-white;
-  nav.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  border-bottom: 1px solid $color-blue-black;
+  nav.navbar {
     margin-bottom: 0px;
-    .row{
-      @include mqmin($size-sm){
+    .row {
+      @include mqmin($size-sm) {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      &:after,&:before{
+      &:after,
+      &:before {
         display: none;
       }
     }
-    .navbar-header{
-      .logo{
+    .navbar-header {
+      .logo {
         width: 90px;
         padding-left: 15px;
         display: inline-block;
-        img{
+        img {
           width: 100%;
         }
       }
     }
-    .navbar-collapse{
+    .navbar-collapse {
       background-color: $color-white;
-      @include mqmax($size-sm){
+      @include mqmax($size-sm) {
         position: absolute;
         z-index: 16;
         width: 100%;
       }
-      .navbar-nav{
-        @include mqmin($size-sm){
+      .navbar-nav {
+        @include mqmin($size-sm) {
           float: none;
         }
-        @include mqmax($size-sm){
+        @include mqmax($size-sm) {
           padding-left: 15px;
         }
-        li{
+        li {
           padding-left: 20px;
-          a{
+          a {
             @extend .text-default;
             text-transform: uppercase;
             display: inline-block;
-            @include mqmax($size-sm){
-              padding:15px 0;
+            @include mqmax($size-sm) {
+              padding: 15px 0;
             }
             @extend .element-hover-active;
+          }
+          &.active {
+            a {
+              position: relative;
+              background: transparent;
+              background-image: none;
+              box-shadow: none;
+              &:after{
+                transform: translateX(0%);   
+              }
+            }
           }
         }
       }

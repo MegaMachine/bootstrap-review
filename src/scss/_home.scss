@@ -39,6 +39,7 @@
     }
   }
   .carousel-indicators{
+    z-index: 5;
     li{
       margin: 0;
       background: $color-blue-black;

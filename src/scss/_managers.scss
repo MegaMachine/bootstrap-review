@@ -1,5 +1,21 @@
 .managers{
   background-color: $color-green;
+  position: relative;
+  .nike-website{
+    position: absolute;
+    top:0px;
+    right:0px;
+    background: $color-blue-black;
+    @include text(16px, $color-white, 400);
+    text-transform: uppercase;
+    border:none;
+    border-radius: 0;
+    &.affix{
+      z-index: 6;
+      position: fixed;
+      top:100px;
+    }
+  }
   .section-title{
 
     h2{

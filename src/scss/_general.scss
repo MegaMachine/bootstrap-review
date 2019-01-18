@@ -5,7 +5,7 @@ html{
   font-family: 'Roboto',sans-serif; //Set default font-family
 }
 .section-padding{
-  padding: 80px 0px;
+  padding: 60px 0px;
 }
 .text-default{
   @include text(18px,$color-blue-black, 400);
@@ -31,7 +31,7 @@ html{
     width:100%;
     height:4px;
     background-color: $color-green;
-    transform: translateX(-101%);
+    transform: translateX(-100%);
     transition: .5s;
     bottom: 0;
     border-radius: 2px;
@@ -39,8 +39,7 @@ html{
   }
   &:hover,&.active{
     &:after{
-      transform: translateX(0%);
-      
+      transform: translateX(0%);   
     }
   }
 }
@@ -56,26 +55,13 @@ html{
   }
 }
 
-.button{
-  &__more{
-    font-family: Montserrat;
-    color:  $color-green;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    &::after{
-      content:"";
-      width: 30px;
-      height: 10px;
-      display: block;
-      background: url('../img/icon/Arrow.svg') no-repeat center / cover;
-      margin-left: 10px;
+.radio-group{
+  .radio-group-item{
+    span{
+
     }
-  }
-  &__read{
-    display: block;   
+    input{
+
+    }
   }
 }

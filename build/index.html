@@ -8,8 +8,26 @@
     <link rel="stylesheet" href="css/libs.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="60">
     <div id="wrapper">
+      <!-- Modal Window -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
       <!-- Header -->
       <header class="header">
         <nav class="navbar navbar-default">
@@ -34,9 +52,11 @@
               </div>
               <div id="responsive-menu" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                  <li><a href="#">home</a></li>
-                  <li><a href="#">about us</a></li>
-                  <li><a href="#">contacts</a></li>
+                  <li><a href="#home">home</a></li>
+                  <li><a href="#about-us">about us</a></li>
+                  <li><a href="#managers">managers</a></li>
+                  <li><a href="#contacts">contacts</a></li>
+                  <li><a href="#faq">faq</a></li>
                 </ul>
               </div>
             </div>
@@ -227,7 +247,10 @@
           </div>
         </section>
         <!-- Section Managers -->
-        <section id="managers" class="managers section-padding"> 
+        <section id="managers" class="managers section-padding">
+          <div class="nike-website btn btn-primary affix-top" data-spy="affix" data-offset-top="300" >
+            <span data-toggle="modal" data-target="#myModal"> More info about nike</span>
+          </div>
           <div class="container">
             <div class="section-title">
               <h2>Our <span>Managers</span></h2>
@@ -273,6 +296,122 @@
                     <h4>Johny Bloome</h4>
                     <p>If you need help call to me</p>
                     <a href="tel:80024445678"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>800-2444-5678</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section Contacts -->
+        <section id="contacts" class="contacts section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 col-md-offset-7">
+                <div class="contacts-form">
+                  <form action="POST">
+                    <label class="label-container">
+                      <span>First Name*</span>
+                      <div class="input-wrap">
+                        <input id="form-first-name" class="form-control" type="text" name="form-first-name" required>
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid zip.
+                      </div>
+                    </label>
+                  
+                    <label class="label-container">
+                      <span>Last Name*</span>
+                      <div class="input-wrap">
+                        <input id="form-last-name" class="form-control" type="text" name="form-last-name" required>
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid zip.
+                      </div>
+                    </label>
+                    <label class="label-container">
+                      <span>E-Mail*</span>
+                      <div class="input-wrap">
+                        <input id="form-email" class="form-control" type="email" name="form-email" required>
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid zip.
+                      </div>
+                    </label>
+                    <div class="radio-group">
+                      <div class="radio-group-item">
+                        <label for="form-male">Male</label>
+                        
+                        <input id="form-male" type="radio" name="gender" class="form-radio-input" value="male" checked>
+                        <span class="radio-group-item-simulator"></span>
+                      </div>
+                      <div class="radio-group-item">
+                        <label for="form-female">Female</label>
+                       
+                        <input id="form-female" type="radio" name="gender" class="form-radio-input" value="female">
+                        <span class="radio-group-item-simulator"></span>
+                      </div>
+                    </div>
+                  
+                    <button class="btn btn-primary" type="submit" >send</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section FAQ -->
+        <section id="faq" class="faq section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                          <span>Collapsible Group 1</span>
+                          <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            <span>Collapsible Group 2</span>
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                          </a>
+                      </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                          <span>Collapsible Group 3</span>
+                          <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                          </a>
+                      </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</div>
+                    </div>
                   </div>
                 </div>
               </div>

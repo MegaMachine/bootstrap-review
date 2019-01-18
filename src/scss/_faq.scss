@@ -1,0 +1,44 @@
+.faq{
+  .panel-group{
+    .panel{
+      border: none;
+        border-radius: 0;
+      .panel-heading{
+        background: $color-green;
+        border-radius: 0;
+        .panel-title{
+          a{
+            display: block;
+            position: relative;
+            @include text(18px, $color-white, 400);
+            text-transform: uppercase;
+            &:focus,&:hover{
+             text-decoration: none;
+            }
+
+            &[aria-expanded="true"]{
+              .glyphicon{
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
+            .glyphicon{
+              font-size: 30px;
+              position: absolute;
+              top:50%;
+              right: 20px;
+              transform-origin: center;
+              transform: translateY(-50%);
+              transition: .3s;
+            }
+          }
+        }
+
+      }
+      .panel-collapse{
+        .panel-body{
+
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,15 @@
 $(document).ready(function(){
   tabPaneSameHeight();
+  affixButton();
+  homeTopPadding();
   $(window).resize(function(){
     tabPaneSameHeight();
+    affixButton();
+    homeTopPadding();
   })
-
+  $(window).scroll(function(){
+    affixButton();
+  })
   $('.hamburger--emphatic').click(function(){
     $(this).toggleClass('is-active');
   });
@@ -28,8 +34,13 @@ $(document).ready(function(){
     });
   })
   
+  $('.input-wrap input').focusin(function(){
+    $(this).parents('.label-container').addClass('active');
+  });
+  $('.input-wrap input').blur(function(){
+    $(this).parents('.label-container').removeClass('active');
+  })
 })
-
 
 function tabPaneSameHeight(){
   var items = $('.about-us .tab-pane');
@@ -44,4 +55,22 @@ function tabPaneSameHeight(){
   });
   itemsContainer.css('height', maxHeight + 'px');
   $(items[0]).addClass('active');
+}
+
+function affixButton(){
+  var item = $('.nike-website');
+  var headerHeight = $('.header').outerHeight();
+  var itemOffsetTop = item.offset().top;
+  // var section = $('.managers').offset().top
+  item.data('offset-top',(itemOffsetTop - headerHeight));
+  if(item.hasClass('affix')){
+    item.css('top',headerHeight);
+  } else {
+    item.removeAttr('style');
+  }
+}
+
+function homeTopPadding(){
+  var headerHeight = $('.header').outerHeight();
+  $('.home').css('paddingTop', headerHeight + 'px'); 
 }
