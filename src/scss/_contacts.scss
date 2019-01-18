@@ -4,6 +4,27 @@
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 50% 100%;
+  position: relative;
+  @include mqmax($size-md){
+    background-image:none;
+  }
+  button[data-toggle="tooltip"]{
+    border-radius: 50%;
+    color:$color-white;
+    background: $color-green;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: none;
+    position: relative;
+    span{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
   .contacts-form{
     form{
       .label-container,.radio-group{
@@ -13,7 +34,9 @@
         display: block;
         min-width: 200px;
         width: 60%;
-
+        @include mqmax($size-xs){
+          width: 100%;
+        }
         span{
           margin-bottom: 5px;
           display: inline-block;
@@ -72,7 +95,9 @@
       .radio-group{
         display: flex;
         .radio-group-item{
+          position: relative;
           label{
+            cursor: pointer;
             margin-bottom: 0px;
             margin-right: 10px;
           }
@@ -88,6 +113,7 @@
             border-radius: 50%;
             border: 2px solid $color-blue-black;
             position: relative;
+            z-index: 1;
             &:after{
               content: "";
               display: block;
@@ -103,7 +129,12 @@
             }
           }
           input{
-            display: none;
+            visibility: hidden;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            margin: 0;
+            z-index: 2;
             &:checked{
               & + .radio-group-item-simulator{
                 &:after{
@@ -113,17 +144,6 @@
             }
           }
         }
-      }
-    }
-    button{
-      padding: 15px 30px;
-      background: $color-green;
-      border:none;
-      border-radius: 0;
-      @include text(16px, $color-white,600);
-      text-transform: uppercase;
-      &:disabled{
-        background-color: $color-grey;
       }
     }
   }

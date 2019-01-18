@@ -8,6 +8,9 @@
         text-transform: uppercase;
         border-width: 2px;
         display: inline-block;
+        @include mqmax($size-sm){
+          font-size: 12px;
+        }
         &:hover{
           background-color: $color-green;
           border-color: transparent;

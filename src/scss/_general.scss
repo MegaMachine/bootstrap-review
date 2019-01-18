@@ -6,6 +6,9 @@ html{
 }
 .section-padding{
   padding: 60px 0px;
+  @include mqmax($size-sm){
+    padding: 30px 0px;
+  }
 }
 .text-default{
   @include text(18px,$color-blue-black, 400);
@@ -13,9 +16,15 @@ html{
 .text-content{
   h3{
     @include text(24px,$color-green,600);
+    @include mqmax($size-sm){
+      font-size: 18px;
+    }
   }
   p{
     @include text(16px,$color-blue-black,400);
+    @include mqmax($size-sm){
+      font-size: 12px;
+    }
     &:first-letter{
       text-transform: uppercase;
     }
@@ -49,19 +58,101 @@ html{
   h2{
     @include text(30px,$color-blue-black,400);
     text-transform: uppercase;
+    @include mqmax($size-sm){
+      font-size: 24px;
+    }
     span{
       color:$color-green;
     }
   }
 }
 
-.radio-group{
-  .radio-group-item{
-    span{
-
+.btn{
+  border:none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 15px 30px;
+  @include text(16px, $color-white,600);
+  text-transform: uppercase;
+  background-image: none;
+  text-shadow: none;
+  border:2px solid transparent;
+  @include mqmax($size-sm){
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  &:hover{
+    border:2px solid $color-blue-black;
+    color:$color-white;
+  }
+  &:active{
+    outline: none !important;   
+    box-shadow: inset 0px 0px 10px 0px $color-blue-black;    
+  }
+  &:focus{
+    outline: none;
+    border:2px solid transparent;
+    color:$color-white;
+  }
+  &.btn-default{
+    background-color: $color-grey;
+    &:active{
+      background-color: $color-grey !important;
+      color:$color-white;
     }
-    input{
+  }
+  &.btn-primary{  
+    background: $color-green;    
+    &:disabled{
+      background-color: $color-grey;
+    }
+    &:active{
+      background-color: $color-green !important;
+    }
+  }
+} 
+.alert{
+  width: 100%;
+  position: fixed;
+  top:0;
+  z-index: 20;
+}
+.modal{
+  .modal-dialog{
+    border-radius: 0;
+    .modal-content{
+      border-radius: 0;
+      .modal-header{
+        border:none;
+      }
+      .modal-body{
+        p{
+          @include text(20px, $color-blue-black,600);
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+      .modal-footer{
+        border:none;
+      }
+    }
+  }
+}
 
+.tooltip{
+  opacity: 1 !important;
+  .tooltip-arrow{
+    border-right-color:$color-green !important;
+  }
+  .tooltip-inner{
+    background: $color-green;
+    
+    border-radius: 0;
+    h2{
+      @include text(20px, $color-white,400);
+    }
+    p{
+      @include text(16px, $color-white,400);
     }
   }
 }

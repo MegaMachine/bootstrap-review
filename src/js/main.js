@@ -40,6 +40,14 @@ $(document).ready(function(){
   $('.input-wrap input').blur(function(){
     $(this).parents('.label-container').removeClass('active');
   })
+  $('[data-toggle="tooltip"]').tooltip();
+  $('.contacts form button').click(function(event){
+    event.preventDefault();
+    checkForm();
+  })
+  $('.alert .close').click(function(){
+    $(this).parent().hide('fade');
+  })
 })
 
 function tabPaneSameHeight(){
@@ -74,3 +82,19 @@ function homeTopPadding(){
   var headerHeight = $('.header').outerHeight();
   $('.home').css('paddingTop', headerHeight + 'px'); 
 }
+
+function checkForm(){
+  var firstName = $('#form-first-name').val();
+  var lastName = $('#form-last-name').val();
+  var email = $('#form-email').val();
+  var gender = $('input[name="gender"]:checked').val();
+  if(firstName && lastName && email && gender){
+    $('#wrapper').prepend('<div class="alert alert-success" role="alert">Your e-mail was send <a href="#" class="close"data-dismiss="alert">x</a></div>');
+  }else{
+    $('#wrapper').prepend('<div class="alert alert-danger" role="alert">Your e-mail write not corectly <a href="#" class="close" data-dismiss="alert">x</a></div>');
+  }
+}
+
+
+      
+      

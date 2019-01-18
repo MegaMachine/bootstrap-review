@@ -11,6 +11,9 @@
             display: block;
             position: relative;
             @include text(18px, $color-white, 400);
+            @include mqmax($size-sm){
+              font-size: 16px;
+            }
             text-transform: uppercase;
             &:focus,&:hover{
              text-decoration: none;
@@ -29,6 +32,10 @@
               transform-origin: center;
               transform: translateY(-50%);
               transition: .3s;
+              @include mqmax($size-sm){
+                right: 10px;
+                font-size:20px;
+              }
             }
           }
         }

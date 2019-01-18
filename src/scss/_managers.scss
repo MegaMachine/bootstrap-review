@@ -10,10 +10,16 @@
     text-transform: uppercase;
     border:none;
     border-radius: 0;
+    @include mqmax($size-sm){
+      font-size: 14px;
+    }
     &.affix{
       z-index: 6;
       position: fixed;
       top:100px;
+    }
+    &:active{
+      background: $color-blue-black !important;
     }
   }
   .section-title{
