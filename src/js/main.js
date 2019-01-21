@@ -49,7 +49,20 @@ $(document).ready(function(){
     $(this).parent().hide('fade');
   })
 })
+$(window).load(function(){
+  var winHeight = $(document).height();
+  var step = 4;
+  var timeToScroll = winHeight/step;
 
+  $('.header nav .navbar-nav a').on('click', function(){
+    var linkAnchor = $(this).attr('href');
+    var sectionTop = $(linkAnchor).offset().top;
+    var headerHeight = $('.header').outerHeight();
+    $('html, body').animate({
+        scrollTop: sectionTop - headerHeight
+    }, timeToScroll);
+  });
+})
 function tabPaneSameHeight(){
   var items = $('.about-us .tab-pane');
   var maxHeight = 0;
